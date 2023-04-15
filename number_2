@@ -1,0 +1,38 @@
+package com.example.demo;
+
+
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+@Component
+public class number_2 implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+
+    @Override
+    public void customize(ConfigurableServletWebServerFactory server) {
+        server.setPort(9090);
+    }
+    @RestController
+    public class ExampleRequestParma {
+        @GetMapping("/RequestParam")
+        public String ExampleRequestParma(@RequestParam("imie") String imie,
+                                          @RequestParam("nazwisko") String nazwisko,
+                                          @RequestParam("pesel") String pesel,
+                                          @RequestParam(value = "email", required = false) String email,
+                                          @RequestParam(value = "telefon", required = false) String telefon)
+                throws Exception {
+            String opisEmail = "";
+            if (email == null) {
+                opisEmail="nie znam Twojego numeru emaila";
+            }
+            String opisTelefon = "";
+            if (telefon==null) {
+                opisTelefon = "nie znam Twojego numeru telefonu";
+            }
+            return "Imie: " + imie + " Nazwisko: " + nazwisko + " Pesel: " + pesel + " Email: "
+                    + (email != null ? email : opisEmail) + " Telefon: " + (telefon != null ? telefon : opisTelefon);
+        }
+    }
+}
