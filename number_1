@@ -1,0 +1,25 @@
+package com.example.demo;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.List;
+@RestController
+public class number_1 {
+    @GetMapping("/tekst")
+    public String index() {
+        return "I like Java.";
+    }
+    @GetMapping("/lista")
+    public List<String> metoda2() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Element numer 1");
+        lista.add("Element numer 2");
+        lista.add("Element numer 3");
+        return lista;
+    }
+    @GetMapping("/liczba")
+    public int getNumber() {
+        return 10101010;
+
+    }
+}
