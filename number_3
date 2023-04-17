@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class number_3 {
+
+    @GetMapping(value = "/{path1}/{id1}/{path2}/{id2}")
+    public String exampleWithPathVariables(
+            @PathVariable String path1,
+            @PathVariable Long id1,
+            @PathVariable String path2,
+            @PathVariable Long id2
+    ) throws Exception {
+        return "Pozyskałem następujące dane tekst: " + path1 + " liczba: " + id1 +
+                " tekst: " + path2 + " liczba: " + id2;
+    }
+}
+
