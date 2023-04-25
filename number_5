@@ -15,7 +15,7 @@ public class http
 
     ) throws Exception {
         return "<b>Przeglądarka/ klient HTTP:</b><br> " + klient + "<br><br><b>Host:</b><br> " + host
-                +"<br><br><b>Język:</b><br> " + acceptLanguage + "<br><br><b>Cookie:</b><br>" + cookie;
+                +"<br><br><b>Język:</b><br> " + acceptLanguage + "<br><br><b>Cookie:</b><br> " + cookie;
 
         }
     }
