@@ -9,3 +9,5 @@ number_4 URL zwraca: funkcję kalkulatora: dodawanie, odejmowanie, iloczyn
 number_5 URL nagłówki HTTP - analiza wartosci
 
 number_6 webowy kalkulator (@Controller)
+
+number_7 dwa obiekty w widoku
